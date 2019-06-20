@@ -15,10 +15,13 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+
 public class MainActivity extends AppCompatActivity {
 
-    Button butt, login, close;
-    TextView hello, total;
+    Button butt, login, close, logout;
+    TextView hello, total, userdata;
     EditText username, password;
 
     int counter = 3;
@@ -82,6 +85,34 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 finish();
+                Intent intent = new Intent(MainActivity.this, RegistrationActivity.class);
+                startActivity(intent);
+            }
+        });
+
+//        Firebase access user info
+        FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+        userdata = (TextView)findViewById(R.id.userdata);
+        if(user != null) {
+
+            String name = user.getDisplayName();
+            String email = user.getEmail();
+            Uri photo = user.getPhotoUrl();
+            String uid = user.getUid();
+
+//            check if user mail is verified
+            boolean emailVerified = user.isEmailVerified();
+            userdata.setText("name: "+name+" email:"+email+"photo: "+photo+" uid:"+uid+emailVerified);
+
+        }
+
+//        logout
+        logout = (Button)findViewById(R.id.logout);
+        logout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                FirebaseAuth.getInstance().signOut();
+                userdata.setText("Login lah...");
             }
         });
 

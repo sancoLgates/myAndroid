@@ -9,4 +9,5 @@
     <string name="password">Password</string>
     <string name="login">Login</string>
     <string name="attemptleft">Attempt Left :</string>
+    <string name="yourMessage">Your Message is </string>
 </resources>
