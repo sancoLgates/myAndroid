@@ -40,6 +40,13 @@ public class RegistrationActivity extends AppCompatActivity {
         });
     }
 
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        Intent intent = new Intent(RegistrationActivity.this, MainActivity.class);
+        startActivity(intent);
+    }
+
     private void registerNewUser() {
         progressBar.setVisibility(View.VISIBLE);
 

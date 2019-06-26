@@ -20,7 +20,7 @@ import com.google.firebase.auth.FirebaseUser;
 
 public class MainActivity extends AppCompatActivity {
 
-    Button butt, login, close, logout;
+    Button butt, login, close, logout, main2;
     TextView hello, total, userdata;
     EditText username, password;
 
@@ -32,6 +32,16 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        main2 = findViewById(R.id.main2);
+
+        main2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, Main2Activity.class);
+                startActivity(intent);
+            }
+        });
 
         butt = findViewById(R.id.button);
         hello = findViewById(R.id.hello);
@@ -55,31 +65,32 @@ public class MainActivity extends AppCompatActivity {
         });
 
 //        LOGIN
-        login = (Button)findViewById(R.id.login);
+//        login = (Button)findViewById(R.id.login);
         close = (Button)findViewById(R.id.close);
-        username = (EditText)findViewById(R.id.username);
-        password = (EditText)findViewById(R.id.password);
-        total = (TextView)findViewById(R.id.attempt);
-
-        login.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if(username.getText().toString().equals("admin") && password.getText().toString().equals("admin")) {
-                    Toast.makeText(getApplicationContext(), "Redirecting ...", Toast.LENGTH_SHORT).show();
-                } else {
-                    Toast.makeText(getApplicationContext(), "Wrong Credentials", Toast.LENGTH_SHORT).show();
-
-                    total.setVisibility(View.VISIBLE);
-//                    total.setBackgroundColor(Color.RED);
-                    counter--;
-                    total.setText(String.format("%s%s", getResources().getString(R.string.attemptleft), Integer.toString(counter)));
-
-                    if(counter == 0) {
-                        login.setEnabled(false);
-                    }
-                }
-            }
-        });
+        logout = (Button)findViewById(R.id.logout);
+//        username = (EditText)findViewById(R.id.username);
+//        password = (EditText)findViewById(R.id.password);
+//        total = (TextView)findViewById(R.id.attempt);
+//
+//        login.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                if(username.getText().toString().equals("admin") && password.getText().toString().equals("admin")) {
+//                    Toast.makeText(getApplicationContext(), "Redirecting ...", Toast.LENGTH_SHORT).show();
+//                } else {
+//                    Toast.makeText(getApplicationContext(), "Wrong Credentials", Toast.LENGTH_SHORT).show();
+//
+//                    total.setVisibility(View.VISIBLE);
+////                    total.setBackgroundColor(Color.RED);
+//                    counter--;
+//                    total.setText(String.format("%s%s", getResources().getString(R.string.attemptleft), Integer.toString(counter)));
+//
+//                    if(counter == 0) {
+//                        login.setEnabled(false);
+//                    }
+//                }
+//            }
+//        });
 
         close.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -102,12 +113,11 @@ public class MainActivity extends AppCompatActivity {
 
 //            check if user mail is verified
             boolean emailVerified = user.isEmailVerified();
-            userdata.setText("name: "+name+" email:"+email+"photo: "+photo+" uid:"+uid+emailVerified);
-
+            userdata.setText(" email:"+email+" uid:"+uid+emailVerified);
+            logout.setVisibility(View.VISIBLE);
         }
 
 //        logout
-        logout = (Button)findViewById(R.id.logout);
         logout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
