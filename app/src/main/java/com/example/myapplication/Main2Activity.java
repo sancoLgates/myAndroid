@@ -10,26 +10,17 @@ import android.graphics.BitmapFactory;
 import android.graphics.Color;
 import android.media.RingtoneManager;
 import android.net.Uri;
-import android.nfc.Tag;
 import android.os.Build;
 import android.support.annotation.NonNull;
+import android.support.design.widget.BottomNavigationView;
+import android.support.v4.app.Fragment;
 import android.support.v4.app.NotificationCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
-import android.view.View;
-import android.widget.Button;
-import android.widget.Toast;
+import android.view.MenuItem;
 
-import com.google.android.gms.tasks.OnCompleteListener;
-import com.google.android.gms.tasks.Task;
-import com.google.firebase.iid.FirebaseInstanceId;
-import com.google.firebase.iid.InstanceIdResult;
-import com.google.firebase.messaging.FirebaseMessaging;
-
-import static android.content.ContentValues.TAG;
-
-public class Main2Activity extends AppCompatActivity {
+public class Main2Activity extends AppCompatActivity implements BottomNavigationView.OnNavigationItemSelectedListener {
 
     private static final String TAG = "FCM Service";
 
@@ -37,38 +28,54 @@ public class Main2Activity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main2);
-        FirebaseMessaging.getInstance().setAutoInitEnabled(true);
         Log.d(TAG, "danutest");
 
-        sendNotification("Do you want to go to bandung tomorrow ?");
+//        sendNotification("Do you want to go to bandung tomorrow ?");
 
-        FirebaseInstanceId.getInstance().getInstanceId()
-                .addOnCompleteListener(new OnCompleteListener<InstanceIdResult>() {
-                    @Override
-                    public void onComplete(@NonNull Task<InstanceIdResult> task) {
-                        if (!task.isSuccessful()) {
-                            Log.w(TAG, "getInstanceId failed", task.getException());
-                            return;
-                        }
-                        // Get new Instance ID token
-                        String token = task.getResult().getToken();
-//
-//                        // Log and toast
-                        String msg = getString(R.string.fcm_token, token);
-                        Log.d(TAG, msg);
-                        Toast.makeText(Main2Activity.this, msg, Toast.LENGTH_LONG).show();
-                    }
-                });
+//        Set Default Home Fragment
+        loadFragment(new HomeFragment());
 
-        Log.d(TAG, "danz"+Build.VERSION.SDK_INT+Build.VERSION_CODES.O);
+//        Inisialisasi BottomNavigationView
+        BottomNavigationView bottomNavigationView = findViewById(R.id.bn_main);
 
-        if (getIntent().getExtras() != null) {
-            Log.d(TAG, "danutestsssssssssssssssss");
+//        beri listener pada saat item/menu bottomnavigation terpilih
+        bottomNavigationView.setOnNavigationItemSelectedListener(this);
 
-            // Call your NotificationActivity here..
-//            Intent intent = new Intent(MainActivity.this, NotificationActivity.class);
-//            startActivity(intent);
+    }
+
+    private boolean loadFragment(Fragment fragment) {
+        if (fragment != null) {
+            getSupportFragmentManager().beginTransaction()
+                    .replace(R.id.fl_container, fragment)
+                    .commit();
+            return true;
         }
+        return false;
+    }
+
+//    method listener untuk logika pemilihan menu
+    @Override
+    public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+        Fragment fragment = null;
+        Log.d(TAG, String.valueOf(item.getItemId()));
+
+        switch (item.getItemId()) {
+            case R.id.home_menu:
+                fragment = new HomeFragment();
+                break;
+            case R.id.search_menu:
+                fragment = new SearchFragment();
+                break;
+            case R.id.favorite_menu:
+                fragment = new FavoriteFragment();
+                break;
+            case R.id.account_menu:
+                fragment = new AccountFragment();
+                break;
+        }
+        Log.d(TAG, fragment.toString());
+
+        return loadFragment(fragment);
     }
 
     private void sendNotification(String messageBody) {
