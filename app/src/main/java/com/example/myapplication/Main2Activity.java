@@ -11,14 +11,23 @@ import android.graphics.Color;
 import android.media.RingtoneManager;
 import android.net.Uri;
 import android.os.Build;
+import android.os.Handler;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.NotificationCompat;
+import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.MenuItem;
+
+import java.util.ArrayList;
+
+import butterknife.BindView;
+import butterknife.ButterKnife;
 
 public class Main2Activity extends AppCompatActivity implements BottomNavigationView.OnNavigationItemSelectedListener {
 
@@ -30,7 +39,7 @@ public class Main2Activity extends AppCompatActivity implements BottomNavigation
         setContentView(R.layout.activity_main2);
         Log.d(TAG, "danutest");
 
-//        sendNotification("Do you want to go to bandung tomorrow ?");
+        sendNotification("Do you want to go to bandung tomorrow ?");
 
 //        Set Default Home Fragment
         loadFragment(new HomeFragment());
@@ -118,5 +127,4 @@ public class Main2Activity extends AppCompatActivity implements BottomNavigation
 
         notificationManager.notify(0 /* ID of notification */, notificationBuilder.build());
     }
-
 }
