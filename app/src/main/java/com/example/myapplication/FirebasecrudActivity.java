@@ -9,6 +9,7 @@ import android.text.TextWatcher;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.view.WindowManager;
 import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.EditText;
@@ -37,6 +38,11 @@ public class FirebasecrudActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+//        if(android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.HONEYCOMB) {
+            getWindow().setFlags(WindowManager.LayoutParams.FLAG_SECURE, WindowManager.LayoutParams.FLAG_SECURE);
+//        }
+
         setContentView(R.layout.activity_firebasecrud);
         //method for find ids of views
         findViews();
@@ -253,9 +259,9 @@ public class FirebasecrudActivity extends AppCompatActivity {
 
                     databaseReference.child(id).setValue(User);
 
-//                    editTextName.setText("");
-//                    editTextNumber.setText("");
-//                    editTextEmail.setText("");
+                    editTextName.setText("");
+                    editTextNumber.setText("");
+                    editTextEmail.setText("");
                     Toast.makeText(this, "User added", Toast.LENGTH_LONG).show();
                 } else {
                     Toast.makeText(this, "Please enter a mobilenumber", Toast.LENGTH_LONG).show();
