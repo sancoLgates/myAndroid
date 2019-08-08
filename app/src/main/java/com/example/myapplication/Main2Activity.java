@@ -96,12 +96,13 @@ public class Main2Activity extends AppCompatActivity implements BottomNavigation
         String channelId = getString(R.string.channelid);
         Uri defaultSoundUri = RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION);
 
-        Bitmap bitmap = BitmapFactory.decodeResource(getResources(), R.drawable.ic_tri);
+        Bitmap bitmap = BitmapFactory.decodeResource(getResources(), R.drawable.original);
+        Bitmap largebitmap = BitmapFactory.decodeResource(getResources(), R.drawable.ic_tri);
 
         NotificationCompat.Builder notificationBuilder =
                 new NotificationCompat.Builder(this, channelId)
                         .setSmallIcon(R.drawable.ic_sanz)
-                        .setLargeIcon(bitmap)
+                        .setLargeIcon(largebitmap)
                         .setContentTitle("Hi Kama")
                         .setContentText(messageBody)
 //                        .setStyle(new NotificationCompat.BigTextStyle()

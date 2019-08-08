@@ -14,7 +14,11 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
-        <activity android:name=".SplashScreen" android:theme="@style/SplashTheme">
+        <activity android:name=".VerifyMobileActivity"></activity>
+        <activity android:name=".phoneReg" />
+        <activity
+            android:name=".SplashScreen"
+            android:theme="@style/SplashTheme">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -26,8 +30,7 @@
 
             <!-- infinity scroll list -->
         </activity>
-        <activity android:name=".Main2Activity">
-        </activity>
+        <activity android:name=".Main2Activity" />
         <activity android:name=".LoginActivity" />
         <activity android:name=".RegistrationActivity" />
         <activity

@@ -23,7 +23,7 @@ import com.google.firebase.auth.FirebaseUser;
 
 public class MainActivity extends AppCompatActivity {
 
-    Button butt, login, close, logout, main2;
+    Button butt, login, close, logout, main2, phone;
     TextView hello, total, userdata;
     EditText username, password;
 
@@ -45,11 +45,20 @@ public class MainActivity extends AppCompatActivity {
         setSupportActionBar(mTopToolbar);
 
         main2 = findViewById(R.id.main2);
+        phone = findViewById(R.id.phonereg);
 
         main2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(MainActivity.this, Main2Activity.class);
+                startActivity(intent);
+            }
+        });
+
+        phone.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, phoneReg.class);
                 startActivity(intent);
             }
         });

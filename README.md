@@ -3,3 +3,5 @@
 - Firebase login
 - notification static
 - menu fragment
+- firebase crud database
+- firebase phone auth
