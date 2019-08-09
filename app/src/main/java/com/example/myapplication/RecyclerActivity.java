@@ -1,5 +1,6 @@
 package com.example.myapplication;
 
+import android.icu.text.NumberFormat;
 import android.os.Handler;
 import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.app.AppCompatActivity;
@@ -81,8 +82,9 @@ public class RecyclerActivity extends AppCompatActivity implements SwipeRefreshL
                     itemCount++;
                     Log.d(TAG, "run: " + itemCount);
                     PostItem postItem = new PostItem();
-                    postItem.setTitle("Sanz Android Apps With Over 50,000 " + itemCount);
+                    postItem.setTitle("Sanz Android Apps With Over " + NumberFormat.getInstance().format(itemCount*10000)  + " words");
                     postItem.setDescription("Sanz Android Apps With Over 50,000 Installations Found on Google Play, Quick Heal Claims");
+                    postItem.setTime(itemCount + "min ago");
                     items.add(postItem);
 
                 }

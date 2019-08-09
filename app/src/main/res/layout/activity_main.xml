@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity">
@@ -13,6 +12,7 @@
         android:layout_height="0dp"
         android:layout_marginTop="8dp"
         android:text="Hello World!"
+        android:visibility="invisible"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
@@ -31,6 +31,7 @@
         android:layout_marginEnd="8dp"
         android:layout_marginRight="8dp"
         android:text="@string/button_name"
+        android:visibility="invisible"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
@@ -46,6 +47,7 @@
         android:layout_marginEnd="8dp"
         android:layout_marginRight="8dp"
         android:layout_marginBottom="8dp"
+        android:visibility="invisible"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.578"
@@ -80,54 +82,54 @@
         app:layout_constraintTop_toBottomOf="@+id/my_toolbar" />
 
     <!--<EditText-->
-        <!--android:id="@+id/username"-->
-        <!--android:layout_width="wrap_content"-->
-        <!--android:layout_height="wrap_content"-->
-        <!--android:layout_marginStart="28dp"-->
-        <!--android:layout_marginLeft="28dp"-->
-        <!--android:layout_marginTop="40dp"-->
-        <!--android:ems="10"-->
-        <!--android:hint="@string/username"-->
-        <!--android:inputType="textPersonName"-->
-        <!--app:layout_constraintStart_toStartOf="parent"-->
-        <!--app:layout_constraintTop_toBottomOf="@+id/editText" />-->
+    <!--android:id="@+id/username"-->
+    <!--android:layout_width="wrap_content"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:layout_marginStart="28dp"-->
+    <!--android:layout_marginLeft="28dp"-->
+    <!--android:layout_marginTop="40dp"-->
+    <!--android:ems="10"-->
+    <!--android:hint="@string/username"-->
+    <!--android:inputType="textPersonName"-->
+    <!--app:layout_constraintStart_toStartOf="parent"-->
+    <!--app:layout_constraintTop_toBottomOf="@+id/editText" />-->
 
     <!--<EditText-->
-        <!--android:id="@+id/password"-->
-        <!--android:layout_width="wrap_content"-->
-        <!--android:layout_height="wrap_content"-->
-        <!--android:layout_marginStart="28dp"-->
-        <!--android:layout_marginLeft="28dp"-->
-        <!--android:layout_marginTop="20dp"-->
-        <!--android:ems="10"-->
-        <!--android:hint="@string/password"-->
-        <!--android:inputType="textPassword"-->
-        <!--app:layout_constraintStart_toStartOf="parent"-->
-        <!--app:layout_constraintTop_toBottomOf="@+id/username" />-->
+    <!--android:id="@+id/password"-->
+    <!--android:layout_width="wrap_content"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:layout_marginStart="28dp"-->
+    <!--android:layout_marginLeft="28dp"-->
+    <!--android:layout_marginTop="20dp"-->
+    <!--android:ems="10"-->
+    <!--android:hint="@string/password"-->
+    <!--android:inputType="textPassword"-->
+    <!--app:layout_constraintStart_toStartOf="parent"-->
+    <!--app:layout_constraintTop_toBottomOf="@+id/username" />-->
 
     <!--<Button-->
-        <!--android:id="@+id/login"-->
-        <!--android:layout_width="wrap_content"-->
-        <!--android:layout_height="wrap_content"-->
-        <!--android:layout_marginStart="12dp"-->
-        <!--android:layout_marginLeft="12dp"-->
-        <!--android:layout_marginTop="28dp"-->
-        <!--android:text="@string/login"-->
-        <!--app:layout_constraintStart_toEndOf="@+id/username"-->
-        <!--app:layout_constraintTop_toBottomOf="@+id/sendMessage" />-->
+    <!--android:id="@+id/login"-->
+    <!--android:layout_width="wrap_content"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:layout_marginStart="12dp"-->
+    <!--android:layout_marginLeft="12dp"-->
+    <!--android:layout_marginTop="28dp"-->
+    <!--android:text="@string/login"-->
+    <!--app:layout_constraintStart_toEndOf="@+id/username"-->
+    <!--app:layout_constraintTop_toBottomOf="@+id/sendMessage" />-->
 
     <!--<TextView-->
-        <!--android:id="@+id/attempt"-->
-        <!--android:layout_width="119dp"-->
-        <!--android:layout_height="25dp"-->
-        <!--android:layout_marginStart="24dp"-->
-        <!--android:layout_marginLeft="24dp"-->
-        <!--android:layout_marginTop="16dp"-->
-        <!--android:text="@string/attemptleft"-->
-        <!--android:textSize="18sp"-->
-        <!--android:visibility="invisible"-->
-        <!--app:layout_constraintStart_toStartOf="parent"-->
-        <!--app:layout_constraintTop_toBottomOf="@+id/password" />-->
+    <!--android:id="@+id/attempt"-->
+    <!--android:layout_width="119dp"-->
+    <!--android:layout_height="25dp"-->
+    <!--android:layout_marginStart="24dp"-->
+    <!--android:layout_marginLeft="24dp"-->
+    <!--android:layout_marginTop="16dp"-->
+    <!--android:text="@string/attemptleft"-->
+    <!--android:textSize="18sp"-->
+    <!--android:visibility="invisible"-->
+    <!--app:layout_constraintStart_toStartOf="parent"-->
+    <!--app:layout_constraintTop_toBottomOf="@+id/password" />-->
 
     <Button
         android:id="@+id/close"
@@ -144,11 +146,15 @@
         android:layout_height="37dp"
         android:layout_marginStart="36dp"
         android:layout_marginLeft="36dp"
-        android:layout_marginTop="44dp"
+        android:layout_marginTop="20dp"
         android:layout_marginEnd="8dp"
         android:layout_marginRight="8dp"
+        android:includeFontPadding="true"
         android:text="@string/loginlah"
+        android:textFontWeight="900"
+        app:fontFamily="casual"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/close" />
 
@@ -185,14 +191,13 @@
         android:layout_height="50dp"
         android:background="?attr/colorPrimary"
         android:elevation="4dp"
+        android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
         app:itemIconTint="@drawable/state_bnve"
         app:itemTextColor="@drawable/state_bnve"
-        android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:popupTheme="@style/ThemeOverlay.AppCompat.Dark"
-        />
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Dark" />
 
     <Button
         android:id="@+id/phonereg"
@@ -204,6 +209,26 @@
         android:text="PhoneReg"
         app:layout_constraintStart_toEndOf="@+id/main2"
         app:layout_constraintTop_toBottomOf="@+id/sendMessage" />
+
+    <ImageButton
+        android:id="@+id/tricrud"
+        android:layout_width="52dp"
+        android:layout_height="46dp"
+        android:layout_marginStart="48dp"
+        android:layout_marginLeft="48dp"
+        android:layout_marginTop="24dp"
+        app:layout_constraintStart_toEndOf="@+id/userdata"
+        app:layout_constraintTop_toBottomOf="@+id/phonereg"
+        app:srcCompat="@mipmap/ic_tri_launcher_round" />
+
+    <Button
+        android:id="@+id/recycler"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:text="Recycler"
+        app:layout_constraintTop_toBottomOf="@+id/tricrud"
+        tools:layout_editor_absoluteX="303dp" />
 
 
 </android.support.constraint.ConstraintLayout>

@@ -107,6 +107,8 @@ public class PostRecyclerAdapter extends RecyclerView.Adapter<BaseViewHolder> {
         TextView textViewTitle;
         @BindView(R.id.textViewDescription)
         TextView textViewDescription;
+        @BindView(R.id.textView)
+        TextView textView;
 
 
         ViewHolder(View itemView) {
@@ -122,9 +124,9 @@ public class PostRecyclerAdapter extends RecyclerView.Adapter<BaseViewHolder> {
             super.onBind(position);
             PostItem item = mPostItems.get(position);
 
-
             textViewTitle.setText(item.getTitle());
             textViewDescription.setText(item.getDescription());
+            textView.setText(item.getTime());
         }
     }
 

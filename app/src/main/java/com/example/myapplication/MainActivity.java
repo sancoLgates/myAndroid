@@ -13,8 +13,8 @@ import android.view.MenuItem;
 import android.view.View;
 import android.webkit.WebView;
 import android.widget.Button;
-//import android.widget.EditText;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -23,7 +23,8 @@ import com.google.firebase.auth.FirebaseUser;
 
 public class MainActivity extends AppCompatActivity {
 
-    Button butt, login, close, logout, main2, phone;
+    Button butt, login, close, logout, main2, phone, recycler;
+    ImageButton tricrud;
     TextView hello, total, userdata;
     EditText username, password;
 
@@ -46,6 +47,8 @@ public class MainActivity extends AppCompatActivity {
 
         main2 = findViewById(R.id.main2);
         phone = findViewById(R.id.phonereg);
+        tricrud = findViewById(R.id.tricrud);
+        recycler = findViewById(R.id.recycler);
 
         main2.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -59,6 +62,22 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(MainActivity.this, phoneReg.class);
+                startActivity(intent);
+            }
+        });
+
+        tricrud.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, FirebasecrudActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        recycler.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, RecyclerActivity.class);
                 startActivity(intent);
             }
         });
