@@ -6,18 +6,18 @@
     android:layout_height="match_parent"
     tools:context=".Main2Activity">
 
-    <ImageView
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:layout_marginBottom="16dp"
-    android:layout_gravity="center_horizontal"
-    android:src="@drawable/ic_account" />
+    <!--<ImageView-->
+    <!--android:layout_width="wrap_content"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:layout_marginBottom="16dp"-->
+    <!--android:layout_gravity="center_horizontal"-->
+    <!--android:src="@drawable/ic_account" />-->
 
     <FrameLayout
-    android:id="@+id/fl_container"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    app:layout_behavior="@string/appbar_scrolling_view_behavior" />
+        android:id="@+id/fl_container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior" />
 
     <android.support.design.widget.BottomNavigationView
     android:id="@+id/bn_main"

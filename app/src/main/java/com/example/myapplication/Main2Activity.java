@@ -23,6 +23,8 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 
@@ -127,5 +129,9 @@ public class Main2Activity extends AppCompatActivity implements BottomNavigation
         }
 
         notificationManager.notify(0 /* ID of notification */, notificationBuilder.build());
+    }
+
+    public void sanzclick(View view) {
+        Toast.makeText(this, getResources().getString(R.string.message_error), Toast.LENGTH_LONG).show(); //3.5 second delay
     }
 }

@@ -3,6 +3,11 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:animateLayoutChanges="false"
+    android:background="#03A9F4"
+    android:isScrollContainer="false"
+    android:keepScreenOn="false"
+    android:onClick="sanzclick"
     android:orientation="vertical">
 
     <TextView

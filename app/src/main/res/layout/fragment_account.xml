@@ -1,22 +1,83 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical">
 
-    <TextView
-        android:id="@+id/tv_account"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerInParent="true"
-        android:text="@string/account"
-        android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
+    <!--<de.hdodenhof.circleimageview.CircleImageView-->
+        <!--android:id="@+id/profile_image"-->
+        <!--android:layout_width="96dp"-->
+        <!--android:layout_height="96dp"-->
+        <!--android:layout_alignParentStart="true"-->
+        <!--android:layout_alignParentLeft="true"-->
+        <!--android:layout_alignParentTop="true"-->
+        <!--android:layout_alignParentEnd="true"-->
+        <!--android:layout_alignParentRight="true"-->
+        <!--android:layout_centerInParent="true"-->
+        <!--android:layout_marginStart="104dp"-->
+        <!--android:layout_marginLeft="108dp"-->
+        <!--android:layout_marginTop="40dp"-->
+        <!--android:layout_marginEnd="112dp"-->
+        <!--android:layout_marginRight="108dp"-->
+        <!--android:onClick="sanzclick"-->
+        <!--android:src="@drawable/original"-->
+        <!--app:civ_border_color="#FFFFFF"-->
+        <!--app:civ_border_width="2dp" />-->
 
-    <ImageView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="16dp"
-        android:layout_gravity="center_horizontal"
-        android:src="@drawable/ic_sanz" />
+    <!--<TextView-->
+        <!--android:id="@+id/textView2"-->
+        <!--android:layout_width="120dp"-->
+        <!--android:layout_height="40dp"-->
+        <!--android:layout_below="@+id/profile_image"-->
+        <!--android:layout_alignParentStart="true"-->
+        <!--android:layout_alignParentLeft="true"-->
+        <!--android:layout_alignParentEnd="true"-->
+        <!--android:layout_alignParentRight="true"-->
+        <!--android:layout_marginTop="8dp"-->
+        <!--android:gravity="center_horizontal"-->
+        <!--android:text="sancoLgates"-->
+        <!--android:textFontWeight="900"-->
+        <!--android:textSize="18sp" />-->
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        android:background="@color/colorUngu"
+        android:orientation="vertical">
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/profile_image"
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="40dp"
+            android:onClick="sanzclick"
+            android:src="@drawable/original"
+            app:civ_border_color="#FFFFFF"
+            app:civ_border_width="2dp" />
+
+        <TextView
+            android:id="@+id/profile_name"
+            android:layout_width="120dp"
+            android:layout_height="20dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="8dp"
+            android:gravity="center_horizontal"
+            android:text="sancoLgates"
+            android:textFontWeight="900"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/profile_city"
+            android:layout_width="120dp"
+            android:layout_height="40dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="2dp"
+            android:gravity="center_horizontal"
+            android:text="Indonesia"
+            android:textSize="12sp" />
+
+    </LinearLayout>
 
 </RelativeLayout>
